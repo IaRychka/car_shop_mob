@@ -4,17 +4,17 @@ import 'package:flutter_swiper_view/flutter_swiper_view.dart';
 import 'package:car_shop/src/video_comtainer.dart';
 
 class ImgSwiper extends StatelessWidget {
-  const ImgSwiper({Key? key, required this.index}) : super(key: key);
-  final int index;
+  const ImgSwiper({Key? key, required this.indexPr}) : super(key: key);
+  final int indexPr;
   @override
   Widget build(BuildContext context) {
     return 
         Swiper(
           itemBuilder: (BuildContext context, int index) {
-            return Image.network('${db[index].secondimages[index]}');
+            return Image.network('${db[indexPr].secondimages[index]}');
           },
           pagination: const SwiperPagination(),
-          itemCount: db[index].secondimages.length,
+          itemCount: db[indexPr].secondimages.length,
           control: const SwiperControl(),
         );
   }
@@ -39,9 +39,9 @@ class ProductPage extends StatelessWidget {
         children: [
           Expanded(
             child: SizedBox(
-                
+                height: 100,
                 child: ImgSwiper(
-                  index: index,
+                   indexPr: index,
                 )),
           ),
           Expanded(
