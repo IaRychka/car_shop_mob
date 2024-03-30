@@ -21,6 +21,9 @@ class HomePage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 50),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
+              crossAxisSpacing: 8,
+              mainAxisSpacing: 8,
+              childAspectRatio: 0.500
           ),
           itemCount: db.length,
           itemBuilder: (BuildContext context, int index) {
@@ -46,9 +49,11 @@ class GridSection extends StatelessWidget {
       child: Column(children: [
         Expanded(
           flex: 4,
-          child: Image.network(
+          child: Container(
+         child: Image.network(
             db[index].mainphoto,
             fit: BoxFit.scaleDown,
+          ),
           ),
         ),
         Expanded(

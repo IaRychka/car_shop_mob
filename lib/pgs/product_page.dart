@@ -11,7 +11,7 @@ class ImgSwiper extends StatelessWidget {
     return 
         Swiper(
           itemBuilder: (BuildContext context, int index) {
-            return Image.network('${db[indexPr].secondimages[index]}');
+            return Image.network('${db[indexPr].secondimages[index]}', fit: BoxFit.fitHeight);
           },
           pagination: const SwiperPagination(),
           itemCount: db[indexPr].secondimages.length,
@@ -39,7 +39,7 @@ class ProductPage extends StatelessWidget {
         children: [
           Expanded(
             child: SizedBox(
-                height: 100,
+                height: 300,
                 child: ImgSwiper(
                    indexPr: index,
                 )),
